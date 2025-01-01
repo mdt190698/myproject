@@ -1,0 +1,56 @@
+<%= tag.div(flash[:alert], style: "color:red") if flash[:alert] %>
+<%= tag.div(flash[:notice], style: "color:green") if flash[:notice] %>
+
+<section>
+    <div class="form-box">
+        <a href="/" class="back-btn">
+            <ion-icon name="arrow-back-outline"></ion-icon>
+        </a>
+        
+        <div class="form-value">
+            <form action="<%= session_path %>" method="post" autocomplete="off">
+                <h2>Login</h2>
+                <div class="inputbox">
+                    <ion-icon name="mail-outline"></ion-icon>
+                    <input
+                        type="email"
+                        id="email_address"
+                        name="email_address"
+                        required
+                        autofocus
+                        autocomplete="off"
+                        value="<%= params[:email_address] %>"
+                        aria-label="Email Address"
+                    >
+                    <label for="email_address">Enter Email</label>
+                </div>
+                <div class="inputbox">
+                    <ion-icon name="lock-closed-outline"></ion-icon>
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        required
+                        autocomplete="new-password"
+                        maxlength="72"
+                        aria-label="Password"
+                    >
+                    <label for="password">Enter Password</label>
+                </div>
+                <div class="forget">
+                    <label>
+                        <input type="checkbox" name="remember_me">
+                        Remember Me
+                    </label>
+                    <div class="forgot-password">
+                        <a href="#">Forgot Password?</a>
+                    </div>
+                </div>
+                <button type="submit">Log in</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>

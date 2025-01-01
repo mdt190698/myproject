@@ -1,0 +1,20 @@
+<h1 class="page-title"><%= t ".title" %></h1>
+
+<div class="action-links">
+  <%= link_to "New product", new_product_path, class: "btn btn-primary" if authenticated? %>
+  <%= link_to "Login", new_session_path, class: "btn btn-secondary" unless authenticated? %>
+</div>
+
+
+<div id="products">
+  <% @products.each do |product| %>
+    <div class="product-card">
+      <%= link_to product.name, product, class: "product-link" %>
+       <% if product.featured_image.attached? %>
+      <%= image_tag product.featured_image, class: "product-image" %>
+    <% else %>
+      <img src="default_image_path.jpg" alt="Default Image" class="product-image"> <!-- Default image if none attached -->
+    <% end %>
+    </div>
+  <% end %>
+</div>

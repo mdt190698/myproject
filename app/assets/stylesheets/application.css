@@ -1,0 +1,629 @@
+/* Đặt font mặc định và chuẩn bị cho giao diện */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #7cbae9; /* Nền trang chính là màu trắng */
+  color: #34495e; /* Chữ màu xám đen cho nội dung chính */
+}
+
+/* Ẩn thanh điều hướng nav khi ở trang đăng nhập */
+nav.hidden {
+  display: none; /* Ẩn nav */
+}
+
+/* Định dạng cho thanh điều hướng */
+nav {
+  display: flex; /* Sử dụng flexbox để căn chỉnh các nút */
+  justify-content: flex-end; /* Căn các nút về bên phải */
+  align-items: center; /* Căn giữa theo chiều dọc */
+  background-color: #b6d0e9; /* Màu nền cho nav */
+  padding: 10px 20px; /* Khoảng cách bên trong nav */
+}
+
+.nav-container {
+  background-color: #fff; /* Màu nền cho khung */
+
+  padding: 10px; /* Khoảng cách bên trong khung */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Đổ bóng cho khung */
+  margin-right: auto; /* Đẩy khung sang bên trái */
+}
+
+.nav-title {
+  font-family: 'Arial', sans-serif; /* Font chữ cho tiêu đề */
+  font-size: 18px; /* Kích thước chữ cho tiêu đề */
+  color: #7cbae9; /* Màu chữ cho tiêu đề */
+}
+
+/* Định dạng cho các liên kết trong nav */
+.nav-link {
+  display: flex; /* Sử dụng flexbox để căn chỉnh icon và chữ */
+  align-items: center; /* Căn giữa theo chiều dọc */
+  justify-content: center; /* Căn giữa theo chiều ngang */
+  width: 100px; /* Chiều rộng của nút */
+  height: 40px; /* Chiều cao của nút */
+  border-radius: 5px; /* Đường bo tròn nhỏ cho nút */
+  background: white; /* Màu nền cho nút Home */
+  color: #7cbae9; /* Màu chữ cho nút Home */
+  text-decoration: none; /* Không có gạch chân */
+  transition: background-color 0.3s ease; /* Hiệu ứng chuyển đổi màu nền */
+  font-family: 'Arial', sans-serif; /* Thêm font chữ cho nút Home */
+  font-size: 16px; /* Kích thước chữ cho nút Home */
+}
+
+/* Hiệu ứng hover cho nút Home */
+.nav-link:hover {
+  background-color: #7cbae9; /* Màu nền sáng hơn khi hover */
+  color: white;
+}
+
+/* Định dạng cho nút Log Out */
+.logout-button {
+  display: flex; /* Sử dụng flexbox để căn chỉnh icon và chữ */
+  align-items: center; /* Căn giữa theo chiều dọc */
+  justify-content: center; /* Căn giữa theo chiều ngang */
+  width: 100px; /* Chiều rộng của nút */
+  height: 40px; /* Chiều cao của nút */
+  border-radius: 5px; /* Đường bo tròn nhỏ cho nút */
+  background: #ffffff; /* Màu nền cho nút Log Out */
+  color: #7cbae9; /* Màu chữ cho nút Log Out */
+  border: none; /* Xóa viền cho nút */
+  cursor: pointer; /* Con trỏ khi hover */
+  transition: background-color 0.3s ease; /* Hiệu ứng chuyển đổi màu nền */
+  margin-left: 10px; /* Khoảng cách giữa nút Home và nút Log Out */
+  font-family: 'Arial', sans-serif; /* Thêm font chữ cho nút Log Out */
+  font-size: 16px; /* Kích thước chữ cho nút Log Out */
+}
+
+/* Hiệu ứng hover cho nút Log Out */
+.logout-button:hover {
+  background-color: #7cbae9; /* Màu nền sáng hơn khi hover */
+  color: white;
+}
+
+/* Cải thiện phần section (form đăng nhập) */
+/* Cải thiện phần section (form đăng nhập) */
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  background-color: #7cbae9; /* Nền của section là trắng */
+}
+
+/* Form box chứa form đăng nhập */
+.form-box {
+  position: relative;
+  width: 400px; /* Tăng chiều rộng để tạo cảm giác thoáng hơn */
+  padding: 50px 40px; /* Điều chỉnh padding để cân đối */
+  background: rgba(255, 255, 255, 0.15); /* Nền sáng hơn một chút */
+  border-radius: 25px; /* Bo tròn nhiều hơn để mềm mại */
+  backdrop-filter: blur(20px); /* Làm mờ mạnh hơn */
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4); /* Tăng độ sâu cho bóng */
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Thêm đường viền mờ */
+  transition: transform 0.3s, box-shadow 0.3s; /* Hiệu ứng chuyển động khi hover */
+}
+
+.form-box:hover {
+  transform: scale(1.05); /* Hiệu ứng phóng to nhẹ khi hover */
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5); /* Tăng hiệu ứng đổ bóng khi hover */
+}
+
+/* Nút mũi tên quay lại */
+.back-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: #fff;
+  font-size: 1.5em;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.1); /* Nền mờ */
+  padding: 10px 15px; /* Tạo không gian bên trong nút */
+  border-radius: 10px; /* Bo góc mềm mại */
+  transition: background 0.3s, transform 0.3s; /* Hiệu ứng mượt mà khi hover */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Thêm đường viền tinh tế */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Hiệu ứng đổ bóng nhẹ */
+}
+
+.back-btn:hover {
+  background: rgba(255, 255, 255, 0.2); /* Thay đổi nền khi hover */
+  transform: scale(1.1); /* Phóng to nhẹ khi hover */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* Tăng hiệu ứng bóng */
+}
+
+.back-btn:active {
+  transform: scale(1); /* Trở về kích thước gốc khi nhấn */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Giảm hiệu ứng bóng */
+}
+
+
+/* Tiêu đề login */
+h2 {
+  font-size: 2.5em; /* Tăng kích thước chữ của tiêu đề */
+  color: #fff;
+  text-align: center;
+  font-weight: 600; /* Thêm độ đậm cho tiêu đề */
+  margin-bottom: 40px; /* Thêm khoảng cách dưới tiêu đề */
+}
+
+/* Cải thiện phần input */
+.inputbox {
+  position: relative;
+  margin: 20px 0;
+  width: 310px;
+}
+
+.inputbox label {
+  position: absolute;
+  top: 10px; /* Đặt label lên phía trên input */
+  left: 5px;
+  color: #fff;
+  font-size: 1.2em; /* Tăng kích thước chữ cho label */
+  pointer-events: none;
+  transition: top 0.3s ease, font-size 0.3s ease;
+}
+
+/* Di chuyển tiêu đề khi có nội dung trong input */
+input:focus ~ label,
+input:valid ~ label {
+  top: -18px; /* Đưa label lên trên khi người dùng bắt đầu nhập */
+  font-size: 1em; /* Giữ kích thước chữ cho label khi di chuyển lên */
+}
+
+.inputbox input {
+  width: 90%;
+  height: 50px;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 1.2em; /* Tăng kích thước font cho input */
+  padding: 0 35px 0 5px;
+  color: #fff;
+  border-bottom: 2px solid #fff;
+}
+
+/* Đảm bảo icon trong input không bị chồng lên */
+.inputbox ion-icon {
+  position: absolute;
+  right: 8px;
+  color: #fff;
+  font-size: 1.5em;
+  top: 18px;
+}
+
+/* Quên mật khẩu và checkbox */
+.forget {
+  margin: 10px 0 10px;
+  font-size: 1em;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+}
+
+.forget label input {
+  margin-right: 5px;
+}
+
+/* Forgot Password link */
+.forgot-password {
+  font-size: 1em;
+  color: #fff;
+}
+
+.forgot-password a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.forgot-password a:hover {
+  text-decoration: underline;
+}
+
+/* Nút login */
+button {
+  width: 100%;
+  height: 50px;
+  border-radius: 25px; /* Tạo đường bo tròn mềm mại cho nút */
+  background: white; /* Màu nền nút */
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 1.2em; /* Kích thước chữ cho nút */
+  color: #7cbae9; /* Màu chữ cho nút */
+  transition: background-color 0.3s ease; /* Hiệu ứng chuyển đổi màu nền */
+}
+
+/* Hiệu ứng hover cho nút login */
+button:hover {
+  background-color: #e5e8ed; /* Màu nền sáng hơn khi hover */
+  color: #7cbae9;
+}
+
+.page-title {
+  text-align: center; /* Căn giữa tiêu đề */
+  font-size: 2em; /* Kích thước chữ cho tiêu đề */
+  color: whitesmoke; /* Màu chữ cho tiêu đề */
+  margin-bottom: 20px; /* Khoảng cách dưới tiêu đề */
+}
+.action-links {
+  text-align: center; /* Căn giữa các liên kết hành động */
+  margin-bottom: 20px; /* Khoảng cách dưới các liên kết */
+}
+/* Định dạng cho danh sách sản phẩm */
+#products {
+  display: flex; /* Sử dụng flexbox để sắp xếp các sản phẩm */
+  flex-wrap: wrap; /* Cho phép các sản phẩm xuống dòng */
+  justify-content: center; /* Căn giữa các sản phẩm */
+  padding: 20px; /* Thêm khoảng cách bên trong cho danh sách sản phẩm */
+}
+
+/* Định dạng cho thẻ sản phẩm */
+.product-card {
+  background-color: white; /* Màu nền cho thẻ sản phẩm */
+  border: 1px solid #ddd; /* Đường viền cho thẻ sản phẩm */
+  border-radius: 5px; /* Đường bo tròn cho thẻ sản phẩm */
+  padding: 15px; /* Khoảng cách bên trong thẻ sản phẩm */
+  margin: 10px; /* Khoảng cách giữa các thẻ sản phẩm */
+  width: 250px; /* Chiều rộng cố định cho thẻ sản phẩm */
+  text-align: center; /* Căn giữa văn bản trong thẻ sản phẩm */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Bóng đổ cho thẻ sản phẩm */
+  transition: transform 0.3s, box-shadow 0.3s; /* Hiệu ứng chuyển đổi cho thẻ sản phẩm */
+}
+
+/* Hiệu ứng hover cho thẻ sản phẩm */
+.product-card:hover {
+  transform: translateY(-5px); /* Nâng thẻ sản phẩm lên khi hover */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Tăng bóng đổ khi hover */
+}
+
+/* Định dạng cho liên kết sản phẩm */
+.product-link {
+  text-decoration: none; /* Không có gạch chân */
+  color: #980d28; /* Màu chữ cho liên kết sản phẩm */
+  font-weight: bold; /* Chữ đậm cho tên sản phẩm */
+  font-size: 1.2em; /* Kích thước chữ cho tên sản phẩm */
+}
+
+/* Định dạng cho chi tiết sản phẩm */
+.product-image {
+  width: 100%; /* Adjust as needed */
+  height: auto; /* Maintain aspect ratio */
+}
+
+
+
+/* Container */
+.custom-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* Khung bao quanh */
+.custom-box {
+  padding: 30px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Back Link */
+.custom-back-link {
+  display: block;
+  margin-bottom: 20px;
+  color: #007bff;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.custom-back-link:hover {
+  text-decoration: underline;
+}
+
+/* Layout */
+.custom-layout {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.custom-image-wrapper {
+  flex: 1;
+  max-width: 450px;
+}
+
+.custom-details {
+  flex: 2;
+  min-width: 400px;
+}
+
+/* Product Image */
+.custom-image {
+  width: 100%;
+  max-width: 450px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Product Title */
+.custom-product-title {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Info Section */
+.custom-info-section {
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.custom-section-title {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.custom-description,
+.custom-inventory {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Buttons */
+.custom-buttons {
+  display: flex;
+  gap: 10px; /* Khoảng cách giữa các nút */
+  align-items: center; /* Căn giữa các nút theo chiều dọc */
+}
+
+.custom-button {
+  display: inline-flex; /* Đảm bảo nội dung nằm giữa */
+  justify-content: center;
+  align-items: center;
+  padding: 12px 20px; /* Khoảng cách trong nút */
+  font-size: 16px; /* Đồng nhất kích thước chữ */
+  font-weight: bold; /* Đậm chữ */
+  border: none; /* Xóa viền mặc định */
+  border-radius: 8px; /* Bo góc */
+  text-decoration: none; /* Xóa gạch chân (cho link) */
+  color: #fff; /* Màu chữ */
+  cursor: pointer; /* Con trỏ chuột */
+  transition: all 0.3s ease; /* Hiệu ứng hover */
+  min-width: 100px; /* Đồng bộ chiều rộng nút */
+  text-align: center; /* Căn giữa chữ */
+  line-height: 1; /* Đảm bảo chiều cao nội dung không bị méo */
+}
+
+/* Nút Edit */
+.custom-edit-button {
+  background-color: #dc3545; /* Giống màu nút Delete */
+}
+
+.custom-edit-button:hover {
+  background-color: #2980b9; /* Giống hover nút Delete */
+}
+
+/* Nút Delete */
+.custom-delete-button {
+  background-color: #dc3545;
+}
+
+.custom-delete-button:hover {
+  background-color: #b02a37;
+}
+
+
+.custom-container {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.custom-box {
+  width: 80%;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.custom-layout {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.custom-image-wrapper img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+.custom-details {
+  flex: 1;
+}
+
+.custom-buttons {
+  margin-top: 20px;
+}
+
+.custom-button {
+  margin-right: 10px;
+  padding: 10px 20px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+.custom-edit-button {
+  background-color: #007bff;
+}
+
+.custom-delete-button {
+  background-color: #dc3545;
+}
+
+
+
+
+
+/* Custom Form Styles */
+.product-form {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.form-input, .form-textarea, .form-file-input {
+  width: 100%;
+  padding: 12px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.form-textarea {
+  height: 150px;
+}
+
+.form-file-input {
+  padding: 6px;
+  cursor: pointer;
+}
+
+.form-input:focus, .form-textarea:focus, .form-file-input:focus {
+  border-color: #4CAF50;
+  outline: none;
+}
+
+.form-submit {
+  padding: 10px 20px;
+  background-color: #be2d44;
+  color: yellow;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.form-submit:hover {
+  background-color: black;
+  color: yellow;
+}
+
+
+.form-cancel {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.cancel-link {
+  font-size: 14px;
+  color: #ff0000;
+  text-decoration: none;
+  border: 1px solid #ff0000;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.cancel-link:hover {
+  background-color: #ff0000;
+  color: #ffffff;
+}
+
+.form-actions {
+  display: flex;
+  gap: 10px; /* Khoảng cách giữa các nút */
+  justify-content: flex-start; /* Hoặc 'space-between', 'center', tùy ý bạn */
+  align-items: center;
+}
+
+.page-title {
+  text-align: center;
+  margin: 20px 0; /* Tùy chỉnh khoảng cách trên/dưới nếu cần */
+  font-size: 2rem; /* Điều chỉnh kích thước chữ nếu muốn */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: white; /* Màu xanh cho nút chính */
+  color: #980d28;
+}
+
+.btn-primary:hover {
+  background-color: #980d28; /* Màu khi hover */
+  color: #f9ca24;
+}
+
+.btn-secondary {
+  background-color: #6c757d; /* Màu xám cho nút phụ */
+}
+
+.btn-secondary:hover {
+  background-color: #5a6268; /* Màu khi hover */
+}
+
+
+
+

@@ -1,0 +1,38 @@
+<div class="custom-container">
+  <div class="custom-box">
+    <%= link_to "Back", products_path, class: "custom-back-link" %>
+
+    <div class="custom-layout">
+      <div class="custom-image-wrapper">
+        <% if @product.featured_image.attached? %>
+          <%= image_tag @product.featured_image, class: "custom-image" %>
+        <% end %>
+      </div>
+
+      <div class="custom-details">
+        <h1 class="custom-product-title"><%= @product.name %></h1>
+
+        <div class="custom-info-section">
+          <h5 class="custom-section-title">Description</h5>
+          <p class="custom-description"><%= @product.description %></p>
+        </div>
+
+        <div class="custom-info-section">
+          <h5 class="custom-section-title">Inventory</h5>
+          <p class="custom-inventory"><%= render "inventory", product: @product %></p>
+        </div>
+
+        <% if authenticated? %>
+  <div class="custom-buttons">
+    <!-- Nút Edit -->
+    <%= button_to "Edit", edit_product_path(@product), method: :get, class: "custom-button custom-edit-button" %>
+
+    <!-- Nút Delete -->
+    <%= button_to "Delete", @product, method: :delete, data: { turbo_confirm: "Are you sure?" }, class: "custom-button custom-delete-button" %>
+  </div>
+<% end %>
+
+      </div>
+    </div>
+  </div>
+</div>
