@@ -19,7 +19,8 @@ nav {
   justify-content: flex-end; /* Căn các nút về bên phải */
   align-items: center; /* Căn giữa theo chiều dọc */
   background-color: #b6d0e9; /* Màu nền cho nav */
-  padding: 10px 20px; /* Khoảng cách bên trong nav */
+  padding: 5px 15px; /* Giảm khoảng cách bên trong nav */
+  height: 50px; /* Đặt chiều cao cụ thể cho nav */
 }
 
 .nav-container {
@@ -74,6 +75,7 @@ nav {
   margin-left: 10px; /* Khoảng cách giữa nút Home và nút Log Out */
   font-family: 'Arial', sans-serif; /* Thêm font chữ cho nút Log Out */
   font-size: 16px; /* Kích thước chữ cho nút Log Out */
+  margin-bottom: 20px;
 }
 
 /* Hiệu ứng hover cho nút Log Out */
@@ -105,6 +107,13 @@ section {
   text-align: center;
   border: 1px solid rgba(255, 255, 255, 0.2); /* Thêm đường viền mờ */
   transition: transform 0.3s, box-shadow 0.3s; /* Hiệu ứng chuyển động khi hover */
+  
+  /* Flexbox để căn giữa */
+  display: flex; /* Sử dụng flexbox */
+  flex-direction: column; /* Sắp xếp theo cột */
+  align-items: center; /* Căn giữa theo chiều ngang */
+  justify-content: center; /* Căn giữa theo chiều dọc */
+  min-height: 400px; /* Đặt chiều cao tối thiểu để đảm bảo căn giữa */
 }
 
 .form-box:hover {
@@ -234,6 +243,7 @@ button {
   font-size: 1.2em; /* Kích thước chữ cho nút */
   color: #7cbae9; /* Màu chữ cho nút */
   transition: background-color 0.3s ease; /* Hiệu ứng chuyển đổi màu nền */
+  margin-top: 20px;
 }
 
 /* Hiệu ứng hover cho nút login */
@@ -256,18 +266,29 @@ button:hover {
 #products {
   display: flex; /* Sử dụng flexbox để sắp xếp các sản phẩm */
   flex-wrap: wrap; /* Cho phép các sản phẩm xuống dòng */
-  justify-content: center; /* Căn giữa các sản phẩm */
+  justify-content: space-around; /* Căn giữa các sản phẩm với khoảng cách đều */
   padding: 20px; /* Thêm khoảng cách bên trong cho danh sách sản phẩm */
+  background-color: #7cbae9; /* Màu nền cho danh sách sản phẩm */
+}
+
+
+/* Định dạng cho danh sách sản phẩm */
+#products {
+  display: flex; /* Sử dụng flexbox để sắp xếp các sản phẩm */
+  flex-wrap: wrap; /* Cho phép các sản phẩm xuống dòng */
+  justify-content: space-between; /* Căn giữa các sản phẩm với khoảng cách đều */
+  padding: 10px; /* Thêm khoảng cách bên trong cho danh sách sản phẩm */
+  background-color: #7cbae9; /* Màu nền nhẹ nhàng cho danh sách sản phẩm */
 }
 
 /* Định dạng cho thẻ sản phẩm */
 .product-card {
   background-color: white; /* Màu nền cho thẻ sản phẩm */
-  border: 1px solid #ddd; /* Đường viền cho thẻ sản phẩm */
-  border-radius: 5px; /* Đường bo tròn cho thẻ sản phẩm */
-  padding: 15px; /* Khoảng cách bên trong thẻ sản phẩm */
-  margin: 10px; /* Khoảng cách giữa các thẻ sản phẩm */
-  width: 250px; /* Chiều rộng cố định cho thẻ sản phẩm */
+  border: 1px solid #e0e0e0; /* Đường viền cho thẻ sản phẩm */
+  border-radius: 8px; /* Đường bo tròn cho thẻ sản phẩm */
+  padding: 10px; /* Khoảng cách bên trong thẻ sản phẩm */
+  margin: 5px; /* Giảm khoảng cách giữa các thẻ sản phẩm */
+  width: calc(20% - 10px); /* Chiều rộng cố định cho thẻ sản phẩm, điều chỉnh cho phù hợp với không gian */
   text-align: center; /* Căn giữa văn bản trong thẻ sản phẩm */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Bóng đổ cho thẻ sản phẩm */
   transition: transform 0.3s, box-shadow 0.3s; /* Hiệu ứng chuyển đổi cho thẻ sản phẩm */
@@ -276,24 +297,23 @@ button:hover {
 /* Hiệu ứng hover cho thẻ sản phẩm */
 .product-card:hover {
   transform: translateY(-5px); /* Nâng thẻ sản phẩm lên khi hover */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Tăng bóng đổ khi hover */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Tăng bóng đổ khi hover */
 }
 
 /* Định dạng cho liên kết sản phẩm */
 .product-link {
   text-decoration: none; /* Không có gạch chân */
-  color: #980d28; /* Màu chữ cho liên kết sản phẩm */
+  color: #d9534f; /* Màu chữ cho liên kết sản phẩm */
   font-weight: bold; /* Chữ đậm cho tên sản phẩm */
-  font-size: 1.2em; /* Kích thước chữ cho tên sản phẩm */
+  font-size: 1.1em; /* Kích thước chữ cho tên sản phẩm */
 }
 
 /* Định dạng cho chi tiết sản phẩm */
 .product-image {
-  width: 100%; /* Adjust as needed */
-  height: auto; /* Maintain aspect ratio */
+  width: 100%; /* Chiều rộng hình ảnh */
+  height: auto; /* Duy trì tỷ lệ khung hình */
+  border-radius: 5px; /* Bo tròn góc cho hình ảnh */
 }
-
-
 
 /* Container */
 .custom-container {
